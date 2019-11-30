@@ -27,7 +27,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun getData() {
+
         pbLoading.visibility = View.VISIBLE
+
+        tvCityName.visibility = View.GONE
+        tvCondition.visibility = View.GONE
+        tvTemperature.visibility = View.GONE
+        imgWheaterIcon.visibility = View.GONE
+
         val retrofit = RetrofitClient().create()
         val weatherApi = retrofit.create(WeatherApi::class.java)
 
