@@ -1,5 +1,6 @@
 package com.kardusinfo.kotlinhttprequest
 
+import android.app.ProgressDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -20,8 +21,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
-        getData()
+        btnGetData.setOnClickListener{
+            getData()
+        }
     }
 
     fun getData() {
@@ -34,7 +36,7 @@ class MainActivity : AppCompatActivity() {
 
         weatherApi.getCurrentWeather(cityName, api_id).enqueue(object : Callback<WeatherResponse> {
             override fun onFailure(call: Call<WeatherResponse>, t: Throwable) {
-                
+
             }
 
             override fun onResponse(
@@ -60,8 +62,8 @@ class MainActivity : AppCompatActivity() {
     fun showData(cityName: String?, condition: String?, icon: String?, temper: Double?) {
         pbLoading.visibility = View.GONE
         tvCityName.text = cityName
-       tvCondition.text = condition
-        tvTemperature.text = "$temper C"
+        tvCondition.text = condition
+        tvTemperature.text = "$temper " + "\u2103"
 
 
         val iconUrl = "http://openweathermap.org/img/w/" + icon + ".png"

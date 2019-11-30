@@ -6,12 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tvCondition"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@id/imgWheaterIcon"
+        app:layout_constraintEnd_toEndOf="@+id/imgWheaterIcon"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="@id/imgWheaterIcon"
         tools:text="Clear Sky" />
 
@@ -26,32 +29,34 @@
         app:layout_constraintVertical_bias="0.2"
         tools:src="@color/colorPrimary" />
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tvTemperature"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="24dp"
         android:textColor="@android:color/black"
         android:textSize="48sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imgWheaterIcon"
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toStartOf="@+id/imgWheaterIcon"
         app:layout_constraintTop_toBottomOf="@id/imgWheaterIcon"
         tools:text="25.2 C" />
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tvCityName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="12dp"
         android:textColor="@android:color/black"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/tvTemperature"
+        app:layout_constraintStart_toStartOf="@+id/tvTemperature"
         app:layout_constraintTop_toBottomOf="@id/tvTemperature"
         tools:text="Hello World!" />
 
-    <ProgressBar
+    <include
+        layout="@layout/loading"
         android:id="@+id/pbLoading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -62,14 +67,18 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:visibility="visible" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:id="@+id/btnGetData"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="GetData"
+        android:layout_marginBottom="72dp"
+        android:textSize="20sp"
+        android:padding="30dp"
+        android:text="Refresh"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
 
