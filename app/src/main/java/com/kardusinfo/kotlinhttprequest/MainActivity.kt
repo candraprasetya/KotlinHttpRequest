@@ -68,6 +68,10 @@ class MainActivity : AppCompatActivity() {
 
     fun showData(cityName: String?, condition: String?, icon: String?, temper: Double?) {
         pbLoading.visibility = View.GONE
+        tvCityName.visibility = View.VISIBLE
+        tvCondition.visibility = View.VISIBLE
+        tvTemperature.visibility = View.VISIBLE
+        imgWheaterIcon.visibility = View.VISIBLE
         tvCityName.text = cityName
         tvCondition.text = condition
         tvTemperature.text = "$temper " + "\u2103"
